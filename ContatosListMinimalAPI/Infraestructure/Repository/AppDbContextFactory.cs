@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
-using Infraestructure.Repository;
 
-namespace Infraestructure.Repository
+namespace ContatosListMinimalAPI.Infraestructure.Repository
 {
     //Criamos o ContextFactory para facilitar a criação de instancias do DbContext através do EFcore
     public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>

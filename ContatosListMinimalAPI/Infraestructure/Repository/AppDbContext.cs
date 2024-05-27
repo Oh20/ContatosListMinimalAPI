@@ -1,7 +1,7 @@
-﻿using Core;
+﻿using ContatosListMinimalAPI.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infraestructure.Repository
+namespace ContatosListMinimalAPI.Infraestructure.Repository
 {
     public class AppDbContext : DbContext
     {

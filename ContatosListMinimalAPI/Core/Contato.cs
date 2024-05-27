@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Core
+namespace ContatosListMinimalAPI.Core
 {
     public class Contato
     {
