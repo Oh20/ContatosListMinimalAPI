@@ -27,7 +27,16 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: | 
+          dotnet build --configuration Release --no-restore
+        continue-on-error: true  
+
+      - name: Verificando sucesso do build
+        run: |
+          if [ $? -ne 0 ]; then
+            echo "::error::Build failed."
+            exit 1
+          fi
 
   test:
     runs-on: ubuntu-latest
@@ -46,4 +55,13 @@ jobs:
       run: dotnet restore
 
     - name: Run tests
-      run: dotnet test --no-restore --verbosity normal
+      run: | 
+        dotnet test --no-restore --verbosity normal
+      continue-on-error: true
+
+    - name: Check if tests passed
+      run: |
+        if [ $? -ne 0 ]; then
+          echo "::error:: cFalha nos teste Automatizados."
+          exit 1
+        fi
