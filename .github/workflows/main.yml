@@ -11,7 +11,7 @@ on:
 jobs:
   build-and-deploy: 
     name: Executando o job de Teste
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     
     steps: 
       - uses: actions/checkout@v3
@@ -29,13 +29,6 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
-      - name: Deploy to Azure
-        uses: Azure/webapps-deploy@v2
-        with:
-          app-name: '<your-webapp-name>'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-
   test:
     runs-on: ubuntu-latest
     needs: build-and-deploy
@@ -47,7 +40,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.x'
+        dotnet-version: '8.0'
 
     - name: Install dependencies
       run: dotnet restore
