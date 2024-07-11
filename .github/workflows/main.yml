@@ -29,7 +29,6 @@ jobs:
       - name: Build
         run: | 
           dotnet build --configuration Release --no-restore
-        continue-on-error: true  
 
       - name: Verificando sucesso do build
         run: |
@@ -57,7 +56,6 @@ jobs:
     - name: Run tests
       run: | 
         dotnet test --no-restore --verbosity normal
-      continue-on-error: true
 
     - name: Check if tests passed
       run: |
