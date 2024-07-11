@@ -83,7 +83,7 @@ namespace ContatosListMinimalAPI.Tests
                                 catch (DbUpdateException)
                                 {
                                     context.Response.StatusCode = 400;
-                                    await context.Response.WriteAsJsonAsync(new { error = "Nome ou telefone já está em uso" });
+                                    await context.Response.WriteAsJsonAsync(new { error = "Nome ou telefone jï¿½ estï¿½ em uso" });
                                 }
                             });
 
@@ -133,7 +133,7 @@ namespace ContatosListMinimalAPI.Tests
                                 catch (DbUpdateException)
                                 {
                                     context.Response.StatusCode = 400;
-                                    await context.Response.WriteAsJsonAsync(new { error = "Nome ou telefone já está em uso" });
+                                    await context.Response.WriteAsJsonAsync(new { error = "Nome ou telefone jï¿½ estï¿½ em uso" });
                                 }
                             });
 
@@ -170,8 +170,8 @@ namespace ContatosListMinimalAPI.Tests
         [Test]
         public async Task Test_CreateContato_ReturnsCreated()
         {
-            //var contato = new Contato { Nome = "Teste", Telefone = "123456789", Email = "teste@example.com" };
-            var contato = new Contato { Nome = "", Telefone = "123456789", Email = "teste@example.com" }; // Passando nome Vazio
+            var contato = new Contato { Nome = "Teste", Telefone = "123456789", Email = "teste@example.com" };
+            //var contato = new Contato { Nome = "", Telefone = "123456789", Email = "teste@example.com" }; // Passando nome Vazio
             //var contato = new Contato { Nome = "Teste", Telefone = "", Email = "teste@example.com" }; // Passando telefone vazio
             var content = new StringContent(JsonSerializer.Serialize(contato), Encoding.UTF8, "application/json");
 
