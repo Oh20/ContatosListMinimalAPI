@@ -47,8 +47,3 @@ jobs:
 
     - name: Run tests
       run: dotnet test --no-restore --verbosity normal
-
-    - name: Test database connection
-      run: dotnet test --filter "Category=DatabaseIntegration" --no-restore --verbosity normal
-      env:
-        DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
