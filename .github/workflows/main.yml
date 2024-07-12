@@ -45,17 +45,8 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
 
-    - name: Debug environment variables
-      run: |
-        echo "DB_CONNECTION_STRING: $env:DB_CONNECTION_STRING"
-      shell: pwsh
-      env:
-        DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
-
     - name: Run tests
       run: dotnet test --no-restore --verbosity normal
 
     - name: Test database connection
       run: dotnet test --filter "Category=DatabaseIntegration" --no-restore --verbosity normal
-      env:
-        DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
