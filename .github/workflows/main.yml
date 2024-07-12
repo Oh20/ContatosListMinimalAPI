@@ -46,7 +46,7 @@ jobs:
       run: dotnet restore
 
     - name: Debug environment variables
-      run: printenv
+      run: env
       env:
         DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
 
