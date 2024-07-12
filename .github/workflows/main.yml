@@ -46,7 +46,9 @@ jobs:
       run: dotnet restore
 
     - name: Debug environment variables
-      run: set
+      run: |
+        echo "DB_CONNECTION_STRING: $env:DB_CONNECTION_STRING"
+      shell: pwsh
       env:
         DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
 
