@@ -45,6 +45,11 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
 
+    - name: Debug environment variables
+      run: printenv
+      env:
+        DB_CONNECTION_STRING: ${{ secrets.DB_CONNECTION_STRING }}
+
     - name: Run tests
       run: dotnet test --no-restore --verbosity normal
 

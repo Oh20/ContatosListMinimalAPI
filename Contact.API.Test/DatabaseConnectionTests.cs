@@ -17,8 +17,11 @@ namespace ContatosListMinimalAPI.Tests
 
             if (string.IsNullOrEmpty(connectionString))
             {
+                Console.WriteLine("Connection string is not set.");
                 throw new InvalidOperationException("Database connection string is not set in the environment variables.");
             }
+
+            Console.WriteLine("Connection string: " + connectionString);
 
             using (var connection = new SqlConnection(connectionString))
             {
