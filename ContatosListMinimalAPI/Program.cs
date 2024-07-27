@@ -40,9 +40,6 @@ app.UseRouting();
 // Adiciona métricas HTTP
 app.UseHttpMetrics();
 
-// Configurar o middleware de autorização se necessário (opcional)
-// app.UseAuthorization();
-
 // Configurar endpoints
 app.UseEndpoints(endpoints =>
 {
