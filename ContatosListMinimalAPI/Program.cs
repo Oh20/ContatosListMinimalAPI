@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Prometheus;
 
+//COmmitChange
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Adicionar serviços ao contêiner.
